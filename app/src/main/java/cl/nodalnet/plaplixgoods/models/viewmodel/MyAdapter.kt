@@ -3,7 +3,6 @@ package cl.nodalnet.plaplixgoods.models.viewmodel
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.recyclerview.widget.RecyclerView
 import cl.nodalnet.plaplixgoods.R
 import cl.nodalnet.plaplixgoods.models.room.ProductsItem
@@ -23,7 +22,7 @@ class MyAdapter(var mProductsID: ProductsID) : RecyclerView.Adapter<MyAdapter.mV
 
     inner class mViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener{
         val mProductsUrl    = itemView.imgProducts
-        val mProductsDetail = itemView.tvDetail
+        val mProductsName = itemView.tvName
         val mProductsPrice  = itemView.tvPrice
         val mProductsId     = itemView.tvId
         val itemView = itemView.setOnClickListener(this)
@@ -42,7 +41,7 @@ class MyAdapter(var mProductsID: ProductsID) : RecyclerView.Adapter<MyAdapter.mV
     override fun onBindViewHolder(holder: mViewHolder, position: Int) {
         val mProductsItem: ProductsItem = dataList[position]
         holder.mProductsId.text = mProductsItem.id.toString()
-        holder.mProductsDetail.text = mProductsItem.name.capitalize()
+        holder.mProductsName.text = mProductsItem.name.capitalize()
         holder.mProductsPrice.text = mProductsItem.price.toString()
         Glide.with(holder.itemView.context)
             .load(mProductsItem.image)

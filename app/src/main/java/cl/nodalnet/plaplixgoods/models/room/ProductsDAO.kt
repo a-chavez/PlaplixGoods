@@ -8,13 +8,13 @@ import androidx.room.Query
 
 @Dao
 interface ProductsDAO {
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertAllData(mSowingListDB: List<ProductsItem>)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertAllData(mProductsDB: List<ProductsItem>)
 
     @Query("SELECT * FROM master_table")
     fun getAllData(): LiveData<List<ProductsItem>>
 
-    @Query("SELECT * FROM master_table WHERE name=:mName")
-    fun getOneGoods(mName: String): LiveData<ProductsItem>
+    @Query("SELECT * FROM master_table WHERE id=:mID")
+    fun getOneGoods(mID: Int): LiveData<ProductsItem>
 
 }

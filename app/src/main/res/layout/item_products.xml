@@ -18,29 +18,27 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/tvPrice"
+        android:id="@+id/tvTxtPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:text="TextView"
+        android:text="Price (CL) :"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgProducts"
-        app:layout_constraintTop_toBottomOf="@+id/tvDetail" />
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
 
     <TextView
-        android:id="@+id/tvDetail"
-        android:layout_width="0dp"
+        android:id="@+id/tvPrice"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/imgBox"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/imgProducts"
-        app:layout_constraintTop_toTopOf="@+id/imgBox" />
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/tvTxtPrice"
+        app:layout_constraintTop_toTopOf="@+id/tvTxtPrice" />
 
     <TextView
         android:id="@+id/textView"
@@ -48,8 +46,23 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:text="SKU :"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPrice"
         app:layout_constraintEnd_toStartOf="@+id/tvId"
         app:layout_constraintTop_toTopOf="@+id/tvPrice" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="TextView"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/imgBox"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/imgProducts"
+        app:layout_constraintTop_toTopOf="@+id/imgBox" />
 
     <TextView
         android:id="@+id/tvId"
@@ -65,8 +78,9 @@
         android:layout_width="0dp"
         android:layout_height="106dp"
         android:layout_marginTop="2dp"
-        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="2dp"
         android:background="@drawable/box"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

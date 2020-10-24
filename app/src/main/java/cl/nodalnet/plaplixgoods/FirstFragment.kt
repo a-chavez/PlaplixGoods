@@ -20,7 +20,6 @@ import kotlinx.android.synthetic.main.item_products.*
 
 class FirstFragment : Fragment(), MyAdapter.ProductsID {
     lateinit var mViewModel: MyViewModel
-    var mId: Int? =null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,6 +53,6 @@ class FirstFragment : Fragment(), MyAdapter.ProductsID {
     override fun passData(mProductsID: Int) {
         val mBundle = Bundle()
         mBundle.putInt("id",mProductsID)
-        Toast.makeText(context, mProductsID.toString(), Toast.LENGTH_SHORT).show()
+        findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment,mBundle)
     }
 }

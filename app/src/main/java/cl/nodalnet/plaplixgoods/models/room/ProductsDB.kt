@@ -7,11 +7,12 @@ import androidx.room.RoomDatabase
 
 private const val DATA_BASE_NAME="products_db"
 
-@Database(entities = [ProductsItem::class],version = 1)
+@Database(entities = [ProductsItem::class, DetailsItem::class],version = 1)
 
 abstract class ProductsDB : RoomDatabase() {
 
    abstract fun getMasterDAO() : ProductsDAO
+   abstract fun getDetailstDAO() : DetailsDAO
 
     companion object {
         @Volatile
