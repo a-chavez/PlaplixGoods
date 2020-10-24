@@ -1,6 +1,7 @@
 package cl.nodalnet.plaplixgoods.models
 
 import android.util.Log
+import androidx.lifecycle.LiveData
 import cl.nodalnet.plaplixgoods.models.retrofit.DetailsList
 import cl.nodalnet.plaplixgoods.models.retrofit.ProductsList
 import cl.nodalnet.plaplixgoods.models.retrofit.RetrofitClient
@@ -73,5 +74,10 @@ class MyRepository(private val mProductsDAO: ProductsDAO, private val mDetailsDA
 
         })
     }
+
+    fun getOneGoods(mID :Int): LiveData<DetailsItem> {
+        return mDetailsDAO.getOneGoods(mID)
+    }
+
 
 }

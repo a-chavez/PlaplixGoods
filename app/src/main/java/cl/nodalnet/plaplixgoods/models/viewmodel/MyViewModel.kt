@@ -23,10 +23,10 @@ class MyViewModel(application: Application):AndroidViewModel(application) {
         mMyRepository.getDataFromProducts()
         mMyRepository.getDataFromDetails()
     }
-/*
-    fun exposeLiveDataFromServer():LiveData<List<ProductsItem>>{
-        return mMyRepository.mLiveData
+
+    fun getOneGoods(mID :Int):LiveData<DetailsItem>{
+        return mMyRepository.getOneGoods(mID)
     }
 
- */
+
 }
