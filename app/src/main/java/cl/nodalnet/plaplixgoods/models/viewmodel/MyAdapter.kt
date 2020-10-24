@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.item_products.view.*
 class MyAdapter(var mProductsID: ProductsID) : RecyclerView.Adapter<MyAdapter.mViewHolder>() {
     private var dataList = emptyList<ProductsItem>()
 
-    fun updateListSeed(mDataList: List<ProductsItem>){
+    fun updateListProducts(mDataList: List<ProductsItem>){
 
         dataList = mDataList
         notifyDataSetChanged()
