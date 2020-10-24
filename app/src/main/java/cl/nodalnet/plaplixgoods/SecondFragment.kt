@@ -13,7 +13,12 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import cl.nodalnet.plaplixgoods.models.viewmodel.MyAdapter
 import cl.nodalnet.plaplixgoods.models.viewmodel.MyViewModel
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import kotlinx.android.synthetic.main.fragment_first.*
+import kotlinx.android.synthetic.main.fragment_second.*
+import kotlinx.android.synthetic.main.item_products.*
 
 class SecondFragment : Fragment() {
 
@@ -40,8 +45,16 @@ class SecondFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
       mViewModel.getOneGoods(mId).observe(viewLifecycleOwner, Observer {
+          tvSecName.setText(it.name)
+          tvSecDescr.setText(it.description)
+          tvSecPrice.setText(it.price.toString())
+          tvSecLastPrice.setText(it.lastPrice.toString())
+          tvSecCredit.setText(it.credit.toString())
 
-          Log.d("Arroz aca", it.toString())
+          Glide.with(this)
+              .load(it.image)
+              .transform(CenterCrop(), RoundedCorners(20))
+              .into(imgsecDetails)
       })
 
 
